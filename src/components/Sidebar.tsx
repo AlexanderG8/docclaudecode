@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { Home, Terminal, Zap, FileText, Plug, Flag, Lightbulb } from 'lucide-react'
+import { Home, Terminal, Zap, BookMarked, Plug, Users, Lightbulb } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface NavItem {
@@ -15,11 +15,11 @@ interface NavItem {
 const navItems: NavItem[] = [
   { to: '/', label: 'Inicio', icon: Home, exact: true },
   { to: '/slash-commands', label: 'Slash Commands', icon: Terminal, count: 25 },
-  { to: '/hooks', label: 'Hooks', icon: Zap, soon: true },
-  { to: '/claude-md', label: 'CLAUDE.md', icon: FileText, soon: true },
-  { to: '/mcp', label: 'MCP Servers', icon: Plug, soon: true },
-  { to: '/cli-flags', label: 'CLI Flags', icon: Flag, soon: true },
-  { to: '/tips', label: 'Tips & Tricks', icon: Lightbulb, soon: true },
+  { to: '/hooks', label: 'Hooks', icon: Zap },
+  { to: '/skills', label: 'Skills', icon: BookMarked },
+  { to: '/mcp', label: 'MCP Servers', icon: Plug },
+  { to: '/sub-agents', label: 'Sub Agentes', icon: Users },
+  { to: '/tips', label: 'Tips & Tricks', icon: Lightbulb, count: 6 },
 ]
 
 export default function Sidebar() {

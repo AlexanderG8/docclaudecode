@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run build 2>&1 | tail -30"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit(src/data/*.ts)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'AVISO: Modificando archivo de datos. Verifica que las interfaces TypeScript no se rompan.'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'DocClaudeCode: React doc site en espanol. Patron: src/data/*.ts + src/pages/*.tsx. Importa con @/. ShadCN usa Base UI (NO asChild). Badge styles: light bg + colored text + border.'"
+          }
+        ]
+      }
+    ]
+  }
+}
